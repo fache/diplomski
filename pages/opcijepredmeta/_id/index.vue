@@ -3,37 +3,42 @@
       <Headline />
       <UrediPredmet />
       <section class="container sekcija">
-        <div>{{nazivPredmeta}} - Opcije predmeta</div>
-        <br/>
+        <h3>{{nazivPredmeta}} - Opcije predmeta</h3>
+        <h4 class="ui horizontal divider header">
+            <i class="id card outline icon"></i>
+            Pristup predmetu
+        </h4>
         <div>Pristup predmetu imaju sljedeći nastavnici i saradnici (slovo N označava da saradnik ima privilegije nastavnika, a slovo S da ima privilegije "super-asistenta"):</div>
-        <!-- TODO -->
-        <br/>
-        TODO
-        <br/><br/>
-        <!-- TODO -->
+        
+        <h4 class="ui horizontal divider header">
+            <i class="tasks icon"></i>
+            Opcije predmeta
+        </h4>
+        <div class="ui segment">
         <div>Izaberite opcije koje želite da učinite dostupnim studentima:</div>
-        <div class="checkboxPadding">
-            <div class="ui toggle checkbox" v-on:click="promijeniMaterijaliOpciju">
-                <input id="materijali" type="checkbox" name="public">
-                <label>Materijali (Moodle) </label>
+            <div class="checkboxPadding">
+                <div class="ui toggle checkbox" v-on:click="promijeniMaterijaliOpciju">
+                    <input id="materijali" type="checkbox" name="public">
+                    <label>Materijali (Moodle) </label>
+                </div>
             </div>
-        </div>
-        <div class="checkboxPadding">
-            <div class="ui toggle checkbox" v-on:click="promijeniSlanjeZadaceOpciju">
-                <input id="slanjezadace" type="checkbox" name="public">
-                <label>Slanje zadaće </label>
+            <div class="checkboxPadding">
+                <div class="ui toggle checkbox" v-on:click="promijeniSlanjeZadaceOpciju">
+                    <input id="slanjezadace" type="checkbox" name="public">
+                    <label>Slanje zadaće </label>
+                </div>
             </div>
-        </div>
-        <div class="checkboxPadding">
-            <div class="ui toggle checkbox" v-on:click="promijeniDnevnikOpciju">
-                <input id="dnevnik" type="checkbox" name="public">
-                <label>Dnevnik </label>
+            <div class="checkboxPadding">
+                <div class="ui toggle checkbox" v-on:click="promijeniDnevnikOpciju">
+                    <input id="dnevnik" type="checkbox" name="public">
+                    <label>Dnevnik </label>
+                </div>
             </div>
-        </div>
-        <div class="checkboxPadding">
-            <div class="ui toggle checkbox" v-on:click="promijeniProjektiOpciju">
-                <input id="projekti" type="checkbox" name="public">
-                <label>Projekti </label>
+            <div class="checkboxPadding">
+                <div class="ui toggle checkbox" v-on:click="promijeniProjektiOpciju">
+                    <input id="projekti" type="checkbox" name="public">
+                    <label>Projekti </label>
+                </div>
             </div>
         </div>
       </section>

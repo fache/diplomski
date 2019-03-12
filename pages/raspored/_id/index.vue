@@ -3,7 +3,7 @@
       <Headline />
       <UrediPredmet />
       <section class="container sekcija">
-          Raspored za: {{nazivPredmeta}}
+          <h3>{{nazivPredmeta}} - Raspored</h3>
       </section>
   </div>
 </template>

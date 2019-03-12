@@ -3,11 +3,16 @@
       <Headline />
       <UrediPredmet />
       <section class="container sekcija">
-          <div>{{nazivPredmeta}} - Obavještenja za studente</div>
+        <h3>{{nazivPredmeta}} - Obavještenja za studente</h3>
 
-        <h3 class="ui header">Prethodna obavještenja</h3>
-        <div class="ui section divider"></div>
-        <h3 class="ui header">Unos novog obavještenja</h3>
+        <h4 class="ui horizontal divider header">
+            <i class="clipboard outline icon"></i>
+            Prethodna obavještenja
+        </h4>
+        <h4 class="ui horizontal divider header">
+            <i class="edit outline icon"></i>
+            Unos novog obavještenja
+        </h4>
 
         <div class="ui form">
             <div class="ui segment">
@@ -67,8 +72,6 @@ export default {
         //TODO smisliti nacin za redirect u slucaju da je korisnik logiran
         if(this.$store.state.active=="aktivan")console.log(this.$store.state.active);
         else{console.log("neaktivan"); this.$router.push('/login');} 
-        
-
     },
     beforeMount (){
         this.predmet=this.$route.query.id;
@@ -82,9 +85,6 @@ export default {
                 break;
             }
         }
-
-
-
     },
     beforeDestroy(){
       this.$store.state.predmetZaUredivanje=null;
