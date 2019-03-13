@@ -46,10 +46,4 @@ export default {
 }
 </script>
 <style scoped>
-@media screen and (min-width: 500px) {
-    .sekcija {
-        padding-left: calc(240px + 3em);
-        padding-right: 3em;
-    }
-}
 </style>

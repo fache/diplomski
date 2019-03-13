@@ -51,4 +51,14 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+@media screen and (min-width: 500px) {
+    .sekcija {
+        padding-left: calc(240px + 3em);
+        padding-right: 3em;
+        padding-top: 30px;
+    }
+    .checkboxPadding{
+        padding-top:25px;
+    }
+}
 </style>
