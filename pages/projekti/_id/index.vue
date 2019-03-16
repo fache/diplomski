@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <UrediPredmet />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
           Projekti za: {{predmet}}
       </section>
   </div>
@@ -28,6 +28,12 @@ export default {
         this.predmet=this.$route.query.id;
         this.$store.state.predmetZaUredivanje=this.predmet;
         this.$store.state.uredivanjePredmeta="projekti";
+    },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
     },
     beforeDestroy(){
       this.$store.state.predmetZaUredivanje=null;

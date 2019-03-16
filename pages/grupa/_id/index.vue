@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <Navigacija />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
             Prikaz grupe: 
             <span v-if="svistudenti">Svi studenti</span>
             <span v-else>{{grupa}}</span>
@@ -55,6 +55,12 @@ export default {
             this.grupa=this.$route.query.id;        
             this.$store.state.aktivnaGrupa=this.grupa;
         }        
+    },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
     },
     beforeDestroy(){
       this.$store.state.aktivnaGrupa=null;

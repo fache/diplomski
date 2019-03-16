@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <UrediPredmet />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
         <h3>{{nazivPredmeta}} - Opcije predmeta</h3>
         <h4 class="ui horizontal divider header">
             <i class="id card outline icon"></i>
@@ -76,6 +76,12 @@ export default {
             this.projekti=!this.projekti;
         }
 
+    },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
     },
     components: {
     Headline, UrediPredmet

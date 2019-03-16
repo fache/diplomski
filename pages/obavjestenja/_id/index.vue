@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <UrediPredmet />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
         <h3>{{nazivPredmeta}} - Obavještenja za studente</h3>
 
         <h4 class="ui horizontal divider header">
@@ -50,6 +50,13 @@
 import Headline from '@/components/Headline'
 import UrediPredmet from '@/components/UrediPredmet'
 export default {
+    head () {
+        return {
+        script: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
+        ],
+        }
+    },
     data() {
         return {
             predmet:null,
@@ -63,7 +70,13 @@ export default {
             document.getElementById("email").checked=false;
             $("#kratkiTekst").val("");
             $("#detaljniTekst").val("");
-        }
+        } 
+    },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
     },
     components: {
     Headline, UrediPredmet

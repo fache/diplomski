@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <UrediPredmet />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
         <h3>{{nazivPredmeta}} - Grupe za predavanja i vježbe</h3>
 
         <h4 class="ui horizontal divider header">
@@ -167,6 +167,12 @@ export default {
                 console.log(err);
             });
         }        
+    },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
     },
     beforeDestroy(){
       this.$store.state.predmetZaUredivanje=null;

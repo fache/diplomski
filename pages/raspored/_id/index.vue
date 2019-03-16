@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <UrediPredmet />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
           <h3>{{nazivPredmeta}} - Raspored</h3>
       </section>
   </div>
@@ -38,6 +38,12 @@ export default {
         }
     },
     mounted (){
+    },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
     },
     beforeDestroy(){
       this.$store.state.predmetZaUredivanje=null;

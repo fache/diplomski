@@ -1,11 +1,15 @@
 <template>
     <div>
-        <div class="ui sidebar visible inverted vertical menu">
-            <nuxt-link :to="{path:'/'}">
+        <div class="ui sidebar inverted vertical menu" v-bind:class="{visible:sidebarMenuVisible}">
+            <div class="item" v-bind:style="{borderBottom: '1px solid #2d2e2f'}">
+                <i class="hand point left outline icon" id="toogleSidebarOff" v-on:click="toogleSidebar" title="Sakrij sidebar"></i>
+                <i class="home icon" id="home" v-on:click="goToHome" title="Idi na početnu stranicu"></i>
+            </div>
+            <!-- <nuxt-link :to="{path:'/'}"> -->
                 <div class="item" v-bind:style="{borderBottom: '1px solid #2d2e2f'}">
                     Dobro došli,<br>{{this.$store.state.userIme}} {{this.$store.state.userPrezime}}
                 </div>
-            </nuxt-link>
+            <!-- </nuxt-link> -->
             <a class="item">
                 Poruke (0)
             </a>    
@@ -68,6 +72,8 @@
                 </div>                
             </nuxt-link>
         </div>
+        <i class="hand point right outline icon"  title="Prikaži sidebar" id="toogleSidebarOn" v-on:click="toogleSidebar"></i>
+        <i class="home icon" id="home2" v-on:click="goToHome" title="Idi na početnu stranicu"></i>
     </div>
 </template>
 <script>
@@ -76,20 +82,50 @@
     export default {
         data() {
             return {
-                predmet:null
+                predmet:null,
+                sidebarMenuVisible:null
             }
         },
         mounted (){
             this.predmet=this.$route.query.id;
+            this.sidebarMenuVisible=this.$store.state.showSidebar;
+        },
+        methods:{
+            toogleSidebar: function(){
+                this.sidebarMenuVisible=!this.sidebarMenuVisible;
+                this.$store.state.showSidebar=this.sidebarMenuVisible;
+            },
+            goToHome: function(){
+                this.$router.push('/'); 
+            }
         }
     };
 </script>
 <style scoped>
-.ui.sidebar{
-    top:50px;
-    height: calc(100% - 50px)!important;
-}
 .uredivanjeSidebar:hover{
     background-color:#ffffff14!important;
+}
+#toogleSidebarOn{
+    position: absolute;
+    top:60px;
+    left:20px;
+    font-size: 2em;
+    cursor:pointer;
+}
+#toogleSidebarOff{
+    font-size: 2em;
+    cursor:pointer;
+}
+#home{
+    font-size: 2em;
+    cursor:pointer;
+    display:contents;
+}
+#home2{
+    position: absolute;
+    top:90px;
+    left:20px;
+    font-size: 2em;
+    cursor:pointer;
 }
 </style>

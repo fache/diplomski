@@ -4,6 +4,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: () => ({
       counter: 0,
+      showSidebar: true,
       active: "neaktivan",
       sid: null,
       userId: null,

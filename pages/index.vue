@@ -2,7 +2,7 @@
   <div>
       <Headline />
       <Navigacija />
-      <section class="container sekcija">
+      <section class="container sekcija" v-bind:class="sidebar">
         <div class="wrapper">
             <div class="ui large header center aligned">Svi Vaši predmeti</div>
           <div class="ui four column doubling stackable grid">
@@ -33,6 +33,12 @@ export default {
     methods: {
       
     },
+    computed: {
+      sidebar: function () {
+        if(this.$store.state.showSidebar) return "lijeviPaddingSidebar";
+        else return "lijeviPadding";
+      }
+    },
     mounted (){
       //TODO smisliti nacin za redirect u slucaju da je korisnik logiran
         if(this.$store.state.active=="aktivan")console.log(this.$store.state.active);
@@ -49,10 +55,4 @@ export default {
   }
 </script>
 <style scoped>
-@media screen and (min-width: 500px) {
-  .sekcija {
-    padding-left: calc(240px + 3em);
-    padding-right: 3em;
-  }
-}
 </style>
