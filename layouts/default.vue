@@ -55,6 +55,7 @@ html {
     .sekcija {
         padding-right: 3em;
         padding-top: 30px;
+        padding-bottom:30px;
     }
     .checkboxPadding{
         padding-top:25px;

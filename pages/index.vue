@@ -9,7 +9,7 @@
             <div v-for="predmet in predmeti" :key="predmet.id" class="column">
               <div class="ui segment">
                 <div class="ui small header center aligned">{{predmet.naziv}}</div>                
-                <div class="ui tiny header right aligned"><nuxt-link :to="{path:'/opcijepredmeta/'+predmet.id, query: { id: predmet.id }}">Uredi predmet</nuxt-link></div>
+                <div class="ui tiny header right aligned"><nuxt-link :to="{path:'/opcijepredmeta/'+predmet.id, query: { id: predmet.id }}"><button class="mini ui yellow button">Uredi predmet</button></nuxt-link></div>
                 <nuxt-link v-for="grupa in predmet.grupe" :key="grupa.id" :to="{path:'/grupa/'+grupa.id, query: { svi: false, id: grupa.id }}"><div>{{grupa.nazivGrupe}}</div></nuxt-link>
                 <nuxt-link :to="{path:'/grupa/'+0, query: { svi: true, predmetid: predmet.id }}">Svi studenti</nuxt-link>
               </div>
