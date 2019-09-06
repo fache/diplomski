@@ -16,8 +16,6 @@
             </div>
           </div>
         </div>
-
-        <button @click="$store.commit('increment')">{{ $store.state.counter }}</button>
       </section>
   </div>
 </template>

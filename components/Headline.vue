@@ -1,6 +1,5 @@
 <template>
   <div id="headline">
-    <img src="../assets/etf-50x50.png" class="image" style="padding-left:20px;" />
     <div style="float:right; margin-right:20px;">
       <h2 style="color:white; margin-bottom:0; text-align:right; line-height: 30px;">Zamger</h2>
       <div style="text-align:right;">
@@ -8,6 +7,7 @@
         <a href="https://zamger.etf.unsa.ba/static/doc/zamger-uputstva-42-nastavnik.pdf" target="_blank"><i class="bug icon"></i>Prijavite bug</a>
       </div>
     </div>
+    <img id="etfIkona" src="../assets/etf-50x50.png" class="image" style="float: right; padding-right: 10px;" />
   </div>
 </template>
 <script>

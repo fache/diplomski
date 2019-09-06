@@ -58,8 +58,8 @@
 }
 #toogleSidebarOn{
     position: absolute;
-    top:60px;
-    left:20px;
+    top:15px;
+    left:70px;
     font-size: 2em;
     cursor:pointer;
 }
@@ -74,7 +74,7 @@
 }
 #home2{
     position: absolute;
-    top:90px;
+    top:15px;
     left:20px;
     font-size: 2em;
     cursor:pointer;

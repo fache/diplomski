@@ -51,20 +51,65 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+@media screen and (max-width: 500px) {
+  #etfIkona{
+    display:none;
+  }
+  .sekcija {
+    padding-right: 1.5em;
+    padding-top: 15px;
+    padding-bottom:15px;
+  }
+  .checkboxPadding{
+    padding-top:15px;
+  }
+  .lijeviPaddingSidebar{
+    padding-left: 1.5em;
+  }
+  .lijeviPadding{
+    padding-left: 1.5em;
+  }
+}
 @media screen and (min-width: 500px) {
     .sekcija {
-        padding-right: 3em;
-        padding-top: 30px;
-        padding-bottom:30px;
+      padding-right: 3em;
+      padding-top: 30px;
+      padding-bottom:30px;
     }
     .checkboxPadding{
-        padding-top:25px;
+      padding-top:25px;
     }
     .lijeviPaddingSidebar{
-        padding-left: calc(240px + 3em);
+      padding-left: calc(240px + 3em);
     }
     .lijeviPadding{
-        padding-left: 3em;
+      padding-left: 3em;
     }
+}
+.uredivanjeSidebar:hover{
+  background-color:#ffffff14!important;
+}
+#toogleSidebarOn{
+  position: absolute;
+  top:15px;
+  left:70px;
+  font-size: 2em;
+  cursor:pointer;
+}
+#toogleSidebarOff{
+  font-size: 2em;
+  cursor:pointer;
+}
+#home{
+  font-size: 2em;
+  cursor:pointer;
+  display:contents;
+}
+#home2{
+  position: absolute;
+  top:15px;
+  left:20px;
+  font-size: 2em;
+  cursor:pointer;
 }
 </style>

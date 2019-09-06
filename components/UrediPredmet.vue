@@ -102,30 +102,5 @@
     };
 </script>
 <style scoped>
-.uredivanjeSidebar:hover{
-    background-color:#ffffff14!important;
-}
-#toogleSidebarOn{
-    position: absolute;
-    top:60px;
-    left:20px;
-    font-size: 2em;
-    cursor:pointer;
-}
-#toogleSidebarOff{
-    font-size: 2em;
-    cursor:pointer;
-}
-#home{
-    font-size: 2em;
-    cursor:pointer;
-    display:contents;
-}
-#home2{
-    position: absolute;
-    top:90px;
-    left:20px;
-    font-size: 2em;
-    cursor:pointer;
-}
+
 </style>
